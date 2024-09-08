@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    font-family: "Bangers", system-ui;
+font-style: normal;
+background-color: #478CCF;
+color: #4535C1;
+}
+
+.main {
+    display: flex;
+
+
+   /* flex-wrap: nowrap;*/
+}
+
+.main div {
+    border: 1px solid #36C2CE;
+    
+   
+    margin: -1px;
+}
+
+.nav-left {
+    width: 65px;
+    
+}
+
+.nav-left nav{
+    margin-top: 200px;
+}
+
+.content {
+    width: 95%;
+    text-align: center;
+}
+
+.top {
+    width: 100%;
+    
+}
+
+.top img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.nav-right {
+    width: 65px;
+}
+
+.group-img{
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.group-img img{
+    width: 25%;
+    border: 2px solid #77E4C8;
+    border-radius: 5px;
+    
+}
+
+.bottom{
+
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.nav-left img{
+
+width: 50px;
+height: 50px;
+padding: 5px;
+padding-top: 10px;
+padding-bottom: 10px;
+
+
+}
