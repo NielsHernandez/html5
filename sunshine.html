@@ -12,14 +12,18 @@
   <div class="main">
     <div class="nav-left">
       <nav>
-        <img src="assets/img/gold.png" alt="gold coin" />
-        <img src="assets/img/blue.png" alt="blue coin" />
+        <img onclick="playSound('sound1')" src="assets/img/gold.png" alt="gold coin" />
+        <img onclick="playSound('sound2')" src="assets/img/blue.png" alt="blue coin" />
         <img src="assets/img/red.webp" alt="red coin" />
         <img src="assets/img/red_mushroom.png" alt="red mushroom" />
-        <img src="assets/img/green_mushroom.png" alt="green mushroom" />
+        <img onclick="playSound('sound5')" src="assets/img/green_mushroom.png" alt="green mushroom" />
       </nav>
+      <audio id="audioPlayer"></audio>
     </div>
     <div class="content">
+      <div class="shine">
+        <img onclick="playSound('getshine')" id="shineBig" src="assets/img/Shine_Sprite.png" alt="shine">
+      </div>
       <div class="top">
         <img
           src="assets/img/portada.webp"
@@ -68,8 +72,46 @@
     </div>
     <div class="nav-left">
       <nav>
-        <img src="assets/img/Shine_Sprite.png" alt="gold coin" />
+        <img onclick="playSound('shine')"  src="assets/img/Shine_Sprite.png" alt="gold coin" />
       </nav>
     </div>
   </div>
 </body>
+<script>
+  function playSound(sound) {
+    const audioPlayer = document.getElementById('audioPlayer');
+    switch (sound) {
+        case 'sound1':
+            audioPlayer.src = 'assets/audio/coin.wav';
+            break;
+        case 'sound2':
+            audioPlayer.src = 'assets/audio/bluecoin.wav';
+            break;
+        case 'sound5':
+            audioPlayer.src = 'assets/audio/1up.wav';
+            break;
+            case 'shine':
+              audioPlayer.src = 'assets/audio/shineappears.wav';
+              document.getElementById("shineBig").style.display ="block";
+              break;
+              //getshine
+              case 'getshine':
+              audioPlayer.src = 'assets/audio/shineget.wav';
+              document.getElementById("shineBig").style.display ="block";
+              //audio.currentTime = 30; // Jump to 30 seconds
+            
+               setTimeout(function() {
+                document.getElementById("shineBig").style.display ="none";
+            }, 3000);
+            
+
+   
+              break;
+        default:
+            console.log('No sound found for this case');
+            return; // Exit the function if no valid case is found
+    }
+    audioPlayer.play();
+}
+
+</script>
